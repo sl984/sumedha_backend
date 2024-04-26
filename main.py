@@ -54,13 +54,14 @@ def table():
 # Create an AppGroup for custom commands
 custom_cli = AppGroup('custom', help='Custom commands')
 
+initShoppingModel()
+
 # Define a command to generate data
 @custom_cli.command('generate_data')
 def generate_data():
     initUsers()
     initPlayers()
     initTitanic()
-    initShoppingModel()
 
 # Register the custom command group with the Flask application
 app.cli.add_command(custom_cli)
